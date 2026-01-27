@@ -5,24 +5,19 @@ import com.etmaintain.models.WorkOrderStatus;
 import com.etmaintain.models.WorkOrderPriority;
 
 /**
- * Main class for the Facility Maintenance System.
  * This class serves as the entry point and demonstrates the WorkOrder model functionality.
  */
 public class Main {
-    /**
-     * Main method that creates and displays a sample WorkOrder to verify the model works correctly.
-     *
-     * @param args Command line arguments (not used)
-     */
+
     public static void main(String[] args) {
         // Create a sample work order with realistic maintenance data
         WorkOrder sampleWorkOrder = new WorkOrder(
-            1001,                                    // Work Order ID
-            "Replace broken fluorescent light in conference room", // Description
+            1234,                                    // Work Order ID
+            "Replace broken fluorescent light in the Dean's Office", // Description
             WorkOrderStatus.ASSIGNED,                // Status
             WorkOrderPriority.MEDIUM,                // Priority
             45,                                      // Technician ID
-            "2024-01-27 14:30:00"                    // Request Date
+            "2026-01-27 14:30:00"                    // Request Date
         );
 
         // Display the work order details to verify the model works
@@ -48,6 +43,6 @@ public class Main {
         System.out.println("Updated Status: " + sampleWorkOrder.getStatus());
         System.out.println();
         
-        System.out.println("WorkOrder model successfully created and tested!");
+        System.out.println("WorkOrder model successfully Working");
     }
 }
