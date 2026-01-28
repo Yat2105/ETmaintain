@@ -32,9 +32,13 @@ public class WorkOrderManager {
         return newWorkOrder;
     }
     public Optional<WorkOrder> getWorkOrderById(int id) {
-        return workOrders.stream()
-                .filter(wo -> wo.getId() == id)
-                .findFirst();
+        // Loop through all work orders to find the one with matching ID
+        for (WorkOrder workOrder : workOrders) {
+            if (workOrder.getId() == id) {
+                return Optional.of(workOrder); // Found the work order
+            }
+        }
+        return Optional.empty(); // No work order found with this ID
     }
 
 
@@ -49,7 +53,14 @@ public class WorkOrderManager {
 
 
     public boolean deleteWorkOrder(int id) {
-        return workOrders.removeIf(wo -> wo.getId() == id);
+        // Find the work order with matching ID and remove it
+        for (int i = 0; i < workOrders.size(); i++) {
+            if (workOrders.get(i).getId() == id) {
+                workOrders.remove(i); // Remove the work order at this index
+                return true; // Successfully deleted
+            }
+        }
+        return false; // No work order found with this ID
     }
 
 
@@ -59,16 +70,32 @@ public class WorkOrderManager {
 
 
     public List<WorkOrder> getWorkOrdersByStatus(WorkOrderStatus status) {
-        return workOrders.stream()
-                .filter(wo -> wo.getStatus() == status)
-                .collect(java.util.stream.Collectors.toList());
+        // Create a new list to store matching work orders
+        List<WorkOrder> matchingOrders = new ArrayList<>();
+        
+        // Loop through all work orders and add matching ones to the new list
+        for (WorkOrder workOrder : workOrders) {
+            if (workOrder.getStatus() == status) {
+                matchingOrders.add(workOrder);
+            }
+        }
+        
+        return matchingOrders;
     }
 
 
     public List<WorkOrder> getWorkOrdersByTechnician(int technicianId) {
-        return workOrders.stream()
-                .filter(wo -> wo.getTechnicianId() == technicianId)
-                .collect(java.util.stream.Collectors.toList());
+        // Create a new list to store work orders for this technician
+        List<WorkOrder> technicianOrders = new ArrayList<>();
+        
+        // Loop through all work orders and add matching ones to the new list
+        for (WorkOrder workOrder : workOrders) {
+            if (workOrder.getTechnicianId() == technicianId) {
+                technicianOrders.add(workOrder);
+            }
+        }
+        
+        return technicianOrders;
     }
 
 
