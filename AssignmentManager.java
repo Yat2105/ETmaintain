@@ -1,4 +1,4 @@
-package com.etmaintain.model;
+package com.etmaintain.models;
 import java.util.List;
 import java.util.ArrayList;
 import com.etmaintain.models.Technician;
@@ -34,5 +34,6 @@ public class AssignmentManager {
     }
 
 }
+
 
 
