@@ -1,4 +1,4 @@
-package com.etmaintain.model;
+package com.etmaintain.models;
 import java.util.ArrayList;
 import java.util.List;
 import com.etmaintain.models.WorkOrder;
@@ -42,4 +42,5 @@ public class Technician {
         return "Technician: " + name + " | Skill: " + skill + " | Orders: " + assignedOrders.size();
     }
  }
+
 
