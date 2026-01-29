@@ -1,5 +1,6 @@
 package com.etmaintain.model;
-import java.util.List;    
+import java.util.List;
+import java.util.ArrayList;
 import com.etmaintain.models.Technician;
 import com.etmaintain.models.WorkOrder;
 public class AssignmentManager {
@@ -33,4 +34,5 @@ public class AssignmentManager {
     }
 
 }
+
 
