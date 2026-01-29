@@ -1,4 +1,4 @@
-package com.etmaintain.managers;
+package com.etmaintain.model;
 import java.util.List;    
 import com.etmaintain.models.Technician;
 import com.etmaintain.models.WorkOrder;
@@ -33,3 +33,4 @@ public class AssignmentManager {
     }
 
 }
+
