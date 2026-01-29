@@ -1,3 +1,7 @@
+package com.etmaintain.managers;
+import java.util.List;    
+import com.etmaintain.models.Technician;
+import com.etmaintain.models.WorkOrder;
 public class AssignmentManager {
     private List<Technician> technicians;
 
@@ -27,4 +31,5 @@ public class AssignmentManager {
 	    newTech.assignOrder(order);
         order.setAssignedTechnician(newTech);
     }
+
 }
